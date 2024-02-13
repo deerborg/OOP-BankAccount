@@ -1,5 +1,4 @@
 /**
- *
  * @author Furkan Aydemir, deerborg
  * @since 2024
  * @version alpha 1.1
@@ -7,8 +6,6 @@
  */
 import java.util.Scanner;
 public class Account {
-    
-    
     private String fullName;
     private long IdNo;
     private String securityQuestion;
@@ -22,20 +19,15 @@ public class Account {
     public void warning(){
         System.out.println("************************************");
     }
-    
-    
     public void bracket(){
         System.out.println("------------------------------------------");
     }
-    
     public void loading(){
         System.out.println("-------------- Please wait --------------");
     }
-    
     public Account(){
-        
+        // Register panel
         this.balance = 0;
-        
         Scanner fullNameScanner = new Scanner(System.in);
         System.out.println("Welcome the XXX Bank. \n Please create an account, enter ur name and surname");
         this.fullName = fullNameScanner.nextLine();
@@ -55,7 +47,7 @@ public class Account {
         loading();
         System.out.println("Account information has been successfully saved. I'm directing you to the login page.");
         loading();
-        
+        // Login panel
         while(true){
             System.out.println("Welcome to XXX Bank. Please enter your ID and password.");
             Scanner checkId = new Scanner(System.in);
@@ -80,11 +72,9 @@ public class Account {
                 System.out.println("Welcome " + fullName + " I direct you to the transaction menu.");
                 loading();
             }break;
-            
         }
-        
+        // Selection menu
         while(true){
-           
             System.out.println("Please select the option you want to perform. For example, 2 .");
             bracket();
             System.out.println("1 - Deposit \n 2 - Withdraw \n 3 - Change password \n 4 - Exit");
@@ -105,9 +95,7 @@ public class Account {
                         System.out.println("Please enter a valid amount.");
                         warning();
                         continue;
-                }
-              
-                
+                } 
             }
                 else if(selector == 2){
                     if(balance == 0){
@@ -142,9 +130,7 @@ public class Account {
                         password = newPassScanner.nextInt();
                         System.out.println("Your password has been changed.");
                         loading();
-                        bracket();
-                        
-                        
+                        bracket();  
                     }
                     else{
                         System.out.println("The answer is incorrect, try again.");
@@ -158,10 +144,7 @@ public class Account {
                     break;
                 }
         }
-        
- 
     }
-
     /**
      * @return the fullName
      */
