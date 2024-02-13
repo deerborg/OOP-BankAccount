@@ -3,7 +3,7 @@
  * @author Furkan Aydemir, deerborg
  * @since 2024
  */
-public class Tester {
+public class BankAccount {
     public static void main(String[] args) {
         //Examine account.java 
         Account newAccount = new Account();
