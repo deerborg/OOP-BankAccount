@@ -17,12 +17,15 @@ public class Account {
     private String warning;
     
     public void warning(){
+        // This is to avoid confusion.
         System.out.println("************************************");
     }
     public void bracket(){
+        // This is to avoid confusion.
         System.out.println("------------------------------------------");
     }
     public void loading(){
+        // This is to avoid confusion.
         System.out.println("-------------- Please wait --------------");
     }
     public Account(){
@@ -49,6 +52,7 @@ public class Account {
         loading();
         // Login panel
         while(true){
+            // It compares the IdNo and password information received from the user with the entered value.
             System.out.println("Welcome to XXX Bank. Please enter your ID and password.");
             Scanner checkId = new Scanner(System.in);
             double checkIdNo = checkId.nextDouble();
@@ -71,7 +75,7 @@ public class Account {
             if(checkPassNo == password){
                 System.out.println("Welcome " + fullName + " I direct you to the transaction menu.");
                 loading();
-            }break;
+            }break; // End login
         }
         // Selection menu
         while(true){
@@ -80,6 +84,7 @@ public class Account {
             System.out.println("1 - Deposit \n 2 - Withdraw \n 3 - Change password \n 4 - Exit");
             Scanner selecScanner = new Scanner(System.in);
             this.selector = selecScanner.nextInt();
+            // It provides routing between transactions according to the transaction received from the user.
                 if(selector == 1){
                     Scanner balanceScanner = new Scanner(System.in);
                     System.out.println("Enter the amount you want to deposit.");
@@ -89,7 +94,6 @@ public class Account {
                     loading();
                     System.out.println("You are directed to the menu....");
                     bracket();
-                
                     if(newBalance <= 0){
                         warning();
                         System.out.println("Please enter a valid amount.");
@@ -98,6 +102,7 @@ public class Account {
                 } 
             }
                 else if(selector == 2){
+                    // Makes changes to the initially created balance variable.
                     if(balance == 0){
                         warning();
                         System.out.println("You cannot perform this transaction because you do not have any amount in your account.");
@@ -121,6 +126,7 @@ public class Account {
                     
                 }
                 else if (selector == 3){
+                    // It compares with the securityQuestion variable received from the user during registration.
                     System.out.println("Please enter your security question answer: ");
                     Scanner secScanner = new Scanner(System.in);
                     String checkSecurty = secScanner.nextLine();
@@ -138,6 +144,7 @@ public class Account {
                         break;
                     }
                 }
+                // End program.
                 else if(selector == 4){
                     System.out.println("Exiting safely. Thank you for choosing us.");
                     bracket();
